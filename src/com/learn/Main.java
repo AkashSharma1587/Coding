@@ -1,14 +1,18 @@
 package com.learn;
 
+import com.learn.problems.StringCompression;
+
 import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        String s  = "Hello World";
-        Node n = convertStringToLinkedList(s);
-        printLinkedList(n);
+        //String s  = "Hello World";
+        //Node n = convertStringToLinkedList(s);
+        //printLinkedList(n);
+        String result = StringCompression.compress("abcddd");
+        System.out.println(result);
 
     }
 
@@ -75,7 +79,7 @@ public class Main {
             listHeads.add(temp);
         }
 
-
+      return null;
 
     }
 }
