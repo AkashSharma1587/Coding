@@ -11,7 +11,7 @@ public class Main {
         //String s  = "Hello World";
         //Node n = convertStringToLinkedList(s);
         //printLinkedList(n);
-        String result = StringCompression.compress("abcddd");
+        String result = StringCompression.compress("abcccccdddaa");
         System.out.println(result);
 
     }
