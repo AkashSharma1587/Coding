@@ -1,9 +1,29 @@
 package com.learn.problems;
 
-/**
- * Created by akash.sharma on 21/08/17.
- */
-public class StringCompression {
+import java.util.HashMap;
+import java.util.List;
+
+public class StringOperations {
+
+    public static List<String> findAllPermutations(String s){
+        if(s == null || s.length() < 1){
+            return null;
+        }
+        HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
+        for(char ch : s.toCharArray()){
+            if(hm.containsKey(ch)){
+                Integer count = (Integer) hm.get(ch);
+                count = count + 1;
+                hm.put(ch, count);
+            }
+            else{
+                hm.put(ch, 1);
+            }
+        }
+
+
+        return null;
+    }
 
     public static String compress(String input){
 

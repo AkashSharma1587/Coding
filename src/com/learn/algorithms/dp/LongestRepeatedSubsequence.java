@@ -8,25 +8,24 @@ import static java.lang.Math.max;
 
 /** Longest Common Subsequence **/
 
-public class LCS {
-    public static int findLCS(String x, String y){
-        if(x==null || x.isEmpty() || y==null || y.isEmpty()){
+public class LongestRepeatedSubsequence {
+    public static int findLRS(String x){
+        if(x==null || x.isEmpty()){
             return -1;
         }
 
         int m = x.length();
-        int n = y.length();
 
         char [] X = x.toCharArray();
-        char [] Y = y.toCharArray();
+        char [] Y = x.toCharArray();
 
-        return lcs(X,m,Y,n);
+        return lrs(X,m,Y,m);
 
 
 
     }
 
-    private static int lcs(char [] X, int m, char [] Y, int n){
+    private static int lrs(char [] X, int m, char [] Y, int n){
         int L[][] = new int[m+1][n+1];
         StringBuffer sb = new StringBuffer();
 
@@ -35,7 +34,7 @@ public class LCS {
                 if(i==0 || j==0){
                     L[i][j] = 0;
                 }
-                else if(X[i-1] == Y[j-1]){
+                else if((X[i-1] == Y[j-1]) && i!=j){
                     L[i][j] = 1 + L[i-1][j-1];
                 }
                 else{
@@ -48,7 +47,7 @@ public class LCS {
 
         int i = m, j = n;
         while (i > 0 && j > 0) {
-            if (X[i - 1] == Y[j - 1]) {
+            if ((X[i - 1] == Y[j - 1]) && i!=j) {
                 sb.append(X[i - 1]);
             }
             if (L[i - 1][j] > L[i][j - 1]) {

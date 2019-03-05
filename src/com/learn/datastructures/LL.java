@@ -232,6 +232,11 @@ public class LL<T> {
       this.head = newHead;
     }
 
+    public LL zip(){
+        return null;
+
+    }
+
     public void removeLoop(){
 
     }
