@@ -6,6 +6,7 @@ import java.util.List;
 public class StringOperations {
 
     public static List<String> findAllPermutations(String s){
+        List<String> result = null;
         if(s == null || s.length() < 1){
             return null;
         }
@@ -21,8 +22,7 @@ public class StringOperations {
             }
         }
 
-
-        return null;
+        return result;
     }
 
     public static String compress(String input){
@@ -46,7 +46,6 @@ public class StringOperations {
             }
 
             if(j <= len){
-
                 int count = j - i;
                 i = j;
                 sb.append(currentChar).append(count);

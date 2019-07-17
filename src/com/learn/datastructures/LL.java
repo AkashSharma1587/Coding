@@ -10,11 +10,11 @@ import java.util.List;
 public class LL<T> {
     LLNode<T> head;
 
-    public LL(LLNode<T> head){
+    public LL(LLNode<T> head) {
         this.head = head;
     }
 
-    public LL(List<T> list){
+    public LL(List<T> list) {
         if(list == null || list.size()==0){
             throw new BadRequestException("LinkedList cannot be created with NULL or Empty list");
         }
@@ -23,12 +23,12 @@ public class LL<T> {
         LLNode tail = null;
         for(T item: list){
            LLNode node = new LLNode(item);
-           if(i == 0){
+           if(i == 0) {
                i = 1;
                this.head = node;
                tail = node;
            }
-            else{
+            else {
                tail.setNext(node);
                tail = node;
            }
@@ -39,16 +39,16 @@ public class LL<T> {
         if(node == null){
             throw new BadRequestException("Input node is null, cannot determine length");
         }
-            LLNode temp = head;
-            int count = 1;
-            while(temp.getNext()!=null){
-                count++;
-                temp = temp.getNext();
-            }
-            return count;
+        LLNode temp = head;
+        int count = 1;
+        while(temp.getNext()!=null) {
+            count++;
+            temp = temp.getNext();
+        }
+        return count;
     }
 
-    public int length(){
+    public int length() {
         if(this.head == null){
             throw new BadRequestException("HEAD node is null, cannot determine length");
         }
@@ -62,7 +62,7 @@ public class LL<T> {
     public void print(LLNode inputNode){
         LLNode<T> node = inputNode;
         System.out.print("[");
-        while(node != null){
+        while(node != null) {
             System.out.print(node.getData() + " -> ");
             node = node.next;
         }
@@ -152,7 +152,7 @@ public class LL<T> {
         LLNode tail = null;
         boolean newHeadChosen = false;
         LLNode newHead = null;
-        while(temp!=null){
+        while(temp!=null) {
             LLNode newNodeTmp = new LLNode(temp.getData());
             if(!newHeadChosen){
                 newHead = newNodeTmp;
@@ -238,7 +238,6 @@ public class LL<T> {
     }
 
     public void removeLoop(){
-
     }
 
     public LL addNumber(LL input){

@@ -55,7 +55,7 @@ public class RemoveCharForAnagrams {
             }
         }
         if(hm.size() > 0){
-
+            String st;
             Iterator it = hm.keySet().iterator();
             while(it.hasNext()){
                 Character ch = (Character) it.next();
